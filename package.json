@@ -4,7 +4,7 @@
   "description": "Example for riot-tag-new-loader",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server -d --open --watch",
+    "dev": "webpack-dev-server -d --open",
     "build": "webpack -p"
   },
   "keywords": [],
