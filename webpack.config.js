@@ -56,8 +56,8 @@ module.exports = (env, options) => {
           test: /\.scss$/,
           use: [
             options.mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
-            "css-loader",
-            "sass-loader"
+            'css-loader',
+            'sass-loader'
           ]
         }
       ]
@@ -71,7 +71,7 @@ module.exports = (env, options) => {
         }
       ]),
       new MiniCssExtractPlugin({
-        filename: "build.css"
+        filename: 'build.css'
       })
     ]
   }
