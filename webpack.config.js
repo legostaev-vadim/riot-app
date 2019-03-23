@@ -1,7 +1,7 @@
 const postcss = require('postcss')
 const autoprefixer = require('autoprefixer')
 const CopyPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
 module.exports = (env, options) => {
