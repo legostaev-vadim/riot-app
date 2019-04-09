@@ -1,6 +1,7 @@
 # riot-app
 
 - **Example for [riot-tag-new-loader](https://www.npmjs.com/package/riot-tag-new-loader)**
+- **[Tutorial](https://github.com/legostaev-vadim/riot-app-tutorial)**
 
 # Install
 
