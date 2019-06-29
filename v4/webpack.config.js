@@ -1,16 +1,24 @@
+const compiler = require('@riotjs/compiler')
 const postcss = require('postcss')
 const autoprefixer = require('autoprefixer')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
+compiler.registerPreprocessor('css', 'plain', (code) => {
+  return {
+    code: postcss([autoprefixer()]).process(code).css,
+    map: null
+  }
+})
+
 module.exports = (env, options) => {
   
   return {
-    entry: './src/App.js',
+    entry: './src/index.js',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'build.js',
+      filename: 'main.js',
       publicPath: 'dist/'
     },
     devServer: {
@@ -19,7 +27,7 @@ module.exports = (env, options) => {
     module: {
       rules: [
         {
-          test: /\.tag$/,
+          test: /\.riot$/,
           exclude: /(node_modules|bower_components)/,
           use: [
             {
@@ -29,16 +37,7 @@ module.exports = (env, options) => {
               }
             },
             {
-              loader: 'riot-tag-new-loader',
-              options: {
-                parsers: {
-                  css: {
-                    plain: function(tag, css) {
-                      return postcss([ autoprefixer({ browsers: ['last 15 versions'] }) ]).process(css).css
-                    }
-                  }
-                }
-              }
+              loader: '@riotjs/webpack-loader'
             }
           ]
         },
@@ -53,7 +52,7 @@ module.exports = (env, options) => {
           }
         },
         {
-          test: /\.scss$/,
+          test: /\.(sa|sc|c)ss$/,
           use: [
             options.mode === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
             'css-loader',
@@ -72,7 +71,7 @@ module.exports = (env, options) => {
         }
       ]),
       new MiniCssExtractPlugin({
-        filename: 'build.css'
+        filename: 'main.css'
       })
     ]
   }

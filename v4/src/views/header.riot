@@ -1,0 +1,24 @@
+<app-header>
+
+  <nav is="app-menu"></nav>
+  <img src="dist/img/riot.png" alt="riot">
+
+  <style type="plain">
+    :host {
+      margin-top: 15px;
+      margin-bottom: 30px;
+      padding: 5px 15px;
+    }
+  </style>
+
+  <script>
+    import AppMenu from './menu.riot'
+
+    export default {
+      components: {
+        AppMenu
+      }
+    }
+  </script>
+
+</app-header>

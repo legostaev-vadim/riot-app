@@ -1,0 +1,44 @@
+<app>
+
+  <header is="app-header"></header>
+  <main is="{state.content}" id="{state.id}"></main>
+  <footer is="app-footer"></footer>
+
+  <style type="plain">
+    :host {
+      display: flex;
+      flex-direction: column;
+      font: normal 16px Verdana;
+    }
+    main {
+      margin-bottom: 20px;
+      padding: 0 15px;
+    }
+  </style>
+
+  <script>
+    import AppHeader from './header.riot'
+    import AppList from './list.riot'
+    import AppForm from './form.riot'
+    import AppFooter from './footer.riot'
+
+    export default {
+      components: {
+        AppHeader,
+        AppList,
+        AppForm,
+        AppFooter
+      },
+      onMounted() {
+        this.route('/list', () => this.update({
+          content: 'app-list',
+          id: ''
+        }))
+        this.route('/edit/*', (id) => this.update({
+          content: 'app-form',
+          id
+        }))
+      }
+    }
+  </script>
+</app>

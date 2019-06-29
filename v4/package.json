@@ -10,14 +10,21 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "axios": "^0.18.0",
-    "riot": "^3.13.2",
+    "normalize.css": "^8.0.1",
+    "riot": "^4.2.0",
+    "riot-observable": "^3.0.0",
     "riot-route": "^3.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.1",
+    "@riotjs/compiler": "^4.3.0",
+    "@riotjs/webpack-loader": "^4.0.1",
     "autoprefixer": "^9.5.0",
     "babel-loader": "^8.0.5",
     "copy-webpack-plugin": "^5.0.1",
@@ -26,7 +33,6 @@
     "node-sass": "^4.11.0",
     "postcss": "^7.0.14",
     "postcss-loader": "^3.0.0",
-    "riot-tag-new-loader": "^1.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.0",

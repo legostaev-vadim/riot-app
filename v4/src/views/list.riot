@@ -1,7 +1,7 @@
-<r-list>
+<app-list>
 
   <div class="list">
-    <a href="#!/edit/{id}" class="list__item" each="{list}" key="{id}">{ firstName } { lastName }</a>
+    <a href="#!/edit/{user.id}" class="list__item" each="{user in state.userList}" key="{user.id}">{ user.firstName } { user.lastName }</a>
   </div>
 
   <style type="plain">
@@ -25,9 +25,14 @@
   </style>
 
   <script>
-    this.user.getUsers()
-    this.user.one('updated', this.update)
-    this.on('update', () => this.list = this.user.list)
+    export default {
+      onMounted() {
+        this.user.one('updated', () => this.update({
+          userList: this.user.list
+        }))
+        this.user.getUsers()
+      }
+    }
   </script>
 
-</r-list>
+</app-list>

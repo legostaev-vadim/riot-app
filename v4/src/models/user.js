@@ -3,10 +3,10 @@ axios.defaults.withCredentials = true
 
 export default class {
 
-  constructor(riot) {
+  constructor(observable) {
     this.list = []
     this.current = {}
-    riot.observable(this)
+    observable(this)
   }
 
   getUsers() {
