@@ -1,6 +1,6 @@
 # riot-app
 
-- **Example for [Riot.js version 4](https://www.npmjs.com/package/riot-tag-new-loader)**
+- **Example for [Riot.js version 4](https://github.com/legostaev-vadim/riot-app/tree/master/v4)**
 
 
 - **Example for [riot-tag-new-loader (Riot.js version 3 only)](https://www.npmjs.com/package/riot-tag-new-loader)**
