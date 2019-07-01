@@ -7,7 +7,7 @@ const path = require('path')
 
 compiler.registerPreprocessor('css', 'plain', (code) => {
   return {
-    code: postcss([autoprefixer()]).process(code).css,
+    code: postcss([autoprefixer]).process(code).css,
     map: null
   }
 })
